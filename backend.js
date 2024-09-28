@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.post("/", (req, res) => {
-  let userName = req.query.userName;
+  let userName = req.body.userName;
   let userId;
 
   userDataModel.create({
@@ -29,8 +29,8 @@ app.post("/", (req, res) => {
 });
 
 app.get("/", async (req, res) => {
-  const user = req.query.userName;
-  const foundUser = await userDataModel.find({ userName: user });
+  const userName = req.body.userName;
+  const foundUser = await userDataModel.find({ userName: userName });
 
   res.json({
     foundUser,
