@@ -9,10 +9,14 @@ async function submit() {
 async function find() {
   let user = document.querySelector(".userFindInput").value;
   console.log(user);
-  await axios.get(`http://localhost:443/?userName=${user}`).then((res) => {
-    document.querySelector(
-      "h1"
-    ).textContent = `Welcome ${res.data.foundUser[0].userName}`;
-    console.log(res.data.foundUser[0].userName);
-  });
+  await axios
+    .get(
+      `https://fullstack-tester-git-main-aryaidnanis-projects.vercel.app/?userName=${user}`
+    )
+    .then((res) => {
+      document.querySelector(
+        "h1"
+      ).textContent = `Welcome ${res.data.foundUser[0].userName}`;
+      console.log(res.data.foundUser[0].userName);
+    });
 }
