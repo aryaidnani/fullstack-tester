@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.post("/", (req, res) => {
+app.post("/post", (req, res) => {
   let userName = req.body.userName;
   let userId;
 
