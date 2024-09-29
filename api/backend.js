@@ -44,5 +44,3 @@ app.get("/arya", (req, res) => {
 app.get("/arya2", (req, res) => {
   res.send("Hello Arya 2");
 });
-
-app.listen(443);
