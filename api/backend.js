@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.post("/post", (req, res) => {
+app.post("/", (req, res) => {
   let userName = req.body.userName;
   let userId;
 
@@ -28,13 +28,13 @@ app.post("/post", (req, res) => {
   });
 });
 
-app.get("/", async (req, res) => {
-  const userName = req.body.userName;
-  const foundUser = await userDataModel.find({ userName: userName });
+// app.get("/", async (req, res) => {
+//   const userName = req.body.userName;
+//   const foundUser = await userDataModel.find({ userName: userName });
 
-  res.json({
-    foundUser,
-  });
-});
+//   res.json({
+//     foundUser,
+//   });
+// });
 
 app.listen(443);
