@@ -12,21 +12,21 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.post("/", (req, res) => {
-  let userName = req.body.userName;
-  let userId;
+// app.post("/", (req, res) => {
+//   let userName = req.body.userName;
+//   let userId;
 
-  userDataModel.create({
-    userId: userId,
-    userName: userName,
-  });
+//   userDataModel.create({
+//     userId: userId,
+//     userName: userName,
+//   });
 
-  res.json({
-    message: "User Created Successfully!",
-    userId: userId,
-    userName: userName,
-  });
-});
+//   res.json({
+//     message: "User Created Successfully!",
+//     userId: userId,
+//     userName: userName,
+//   });
+// });
 
 // app.get("/", async (req, res) => {
 //   const userName = req.body.userName;
@@ -36,5 +36,13 @@ app.post("/", (req, res) => {
 //     foundUser,
 //   });
 // });
+
+app.get("/arya", (req, res) => {
+  res.send("Hello Arya 1");
+});
+
+app.get("/arya2", (req, res) => {
+  res.send("Hello Arya 2");
+});
 
 app.listen(443);
