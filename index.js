@@ -1,6 +1,6 @@
 async function submit() {
   const username = document.querySelector(".userInput").value;
-  await fetch("http://localhost:3000/posts", {
+  await fetch("https://fullstack-tester.vercel.app/posts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
